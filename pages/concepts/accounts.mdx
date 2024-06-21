@@ -1,0 +1,17 @@
+# Programs in Solana
+
+In Solana , all executable smart contracts are know as programs. Smart contracts / Programs are the onchian accounts which contains executable code , logic and functions stored in the organized way. This is knows as Instructions.
+We have some major key points of Accounts in Solana ecosystem, here are they :
+
+1. **On-Chain activity** : They contain executable code organized into distinct functions called instructions.
+2. **Stateless nature** : They do not store data themselves but can create new accounts to manage program state.
+3. **Upgradeable** : Programs can be updated by an authority. Once the upgrade authority is set to null, the program becomes immutable.
+4. **Verifiable builds** : Users can verify that on-chain programs match publicly available source code.
+
+## How to write Programs on Solana
+
+Solana programs are mainly written in the Rust programming language. There are two common approaches:
+
+1. **[Anchor Framework](https://www.anchor-lang.com/)** : A framework that simplifies Solana program development. It uses Rust macros to reduce boilerplate code. It's ideal for beginners.
+
+2. **[Rust](https://www.rust-lang.org/)**: Writing Solana programs directly in Rust without using frameworks. Offers more flexibility but is more complex.

@@ -1,0 +1,63 @@
+# Generating of Keypair
+
+1. Make a new directory, install TypeScript, Solana web3.js and esrun using local terminal
+
+```bash
+mkdir generate-keypair
+cd generate-keypair
+npm init -y
+npm install typescript @solana/web3.js esrun @solana-developers/helpers
+
+```
+
+2. Make a new file called **keypair.ts** and add the following commands in it
+
+```bash
+import { Keypair } from "@solana/web3.js";
+const keypair = Keypair.generate();
+console.log(`Keypair Successfully Generated`)
+```
+
+3. Run **` npx esrun generate-keypair.ts`**. You should see the following result:
+
+```bash
+Keypair Successfully Generated !
+```
+
+4. Now Keypair is the combination of **publicKey** and **secretKey**, Now we need to generate both of them together, Update the code in Keypair.ts file :
+
+```bash
+import { Keypair } from "@solana/web3.js";
+
+const keypair = Keypair.generate();
+
+console.log(`The public key is: `, keypair.publicKey.toBase58());
+console.log(`The secret key is: `, keypair.secretKey);
+console.log(`Generated Successfully !`);
+```
+
+5. Now it's time to store your Public and the Secret Key in an **.env** file in the form of string :
+
+```bash
+SECRET_KEY="[(a series of numbers)]"
+
+```
+
+6. It's time to import your secret keys from .env file to keypair.ts :
+
+```bash
+import "dotenv/config"
+import { getKeypairFromEnvironment } from "@solana-developers/helpers";
+
+const keypair = getKeypairFromEnvironment("SECRET_KEY");
+
+console.log(
+  `Finished! We've imported our secret key securely!`
+);
+```
+
+7. Great Dev, U made it to here . Run the final command now **npx esrun keypair.ts** & result should be :
+
+```bash
+ Finished! We've imported our secret key securely!
+```

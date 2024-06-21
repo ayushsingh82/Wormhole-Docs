@@ -1,0 +1,61 @@
+# Solana CLI Tool Kit
+
+In this section, we will describe how to use the Solana command-line tools to create a wallet, to send and receive SOL tokens, and to participate in staking.
+
+To interact with a Solana cluster, we will use its command-line interface, also known as the CLI. The CLI is not necessarily the easiest to use, but it provides the most direct, flexible, and secure access to your Solana accounts.
+
+## Installation
+
+To get started you journey in Development with Solana , you need to specify first whether you wish to go with client side development or Onchain development or both.
+
+### **Cliend Side Development**
+
+If you're developing on the client-side, you can work with any programming language you're comfortable with. Solana has community-contributed SDKs to help developers interact with the Solana network in most popular languages:
+
+| Language       | SDK                                                                 |
+| -------------- | ------------------------------------------------------------------- |
+| **RUST**       | [`solana_sdk`](https://docs.rs/solana-sdk/latest/solana_sdk/)       |
+| **Typescript** | [`@solana/web3.js`](https://solana-labs.github.io/solana-web3.js/)  |
+| **Python**     | [`solders`](https://pypi.org/project/solders/)                      |
+| **Java**       | [`solanaj`](https://github.com/skynetcapital/solanaj)               |
+| **C++**        | [`solcpp`](https://github.com/aaomidi/solcpp)                       |
+| **Go**         | [`solana-go`](https://pkg.go.dev/github.com/gagliardetto/solana-go) |
+| **Kotlin**     | [`solanaKT`](https://github.com/rock3r/solana-kt)                   |
+| **Dart**       | [`solana`](https://pub.dev/packages/solana)                         |
+
+Now after building client-side applications , we now require RPC to communicate with network. Solana have multiple
+RPC Infrastructure :
+
+| **Testnet**                                                      | **Devnet**                                                               | **Mainnet-beta**                                                           |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| [https://api.testnet.solana.com](https://api.testnet.solana.com) | [https://api.devnet.solana.com](https://api.devnet.solana.com)           | [https://api.mainnet-beta.solana.com](https://api.mainnet-beta.solana.com) |
+|                                                                  | [https://rpc.ankr.com/solana_devnet](https://rpc.ankr.com/solana_devnet) | [https://rpc.ankr.com/solana](https://rpc.ankr.com/solana)                 |
+|                                                                  | [Helius](https://www.helius.dev)                                         | [Syndica](https://www.syndica.io)                                          |
+|                                                                  | [QuickNode](https://www.quicknode.com)                                   | [Blockdaemon](https://blockdaemon.com)                                     |
+|                                                                  |                                                                          | [GetBlock](https://getblock.io)                                            |
+|                                                                  |                                                                          | [Helius](https://www.helius.dev)                                           |
+|                                                                  |                                                                          | [QuickNode](https://www.quicknode.com)                                     |
+
+![Helius](public/images/Helius.jpeg)
+
+### **Onchain Program Development**
+
+Onchain Program Development consists of writing programs / smart contracts in Rust , C, C++. Firstly you have to install Rust on your machine. You can do this by pasting the command in ur desired file/ terminal :
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+After it , you need to have [Solana CLI](https://solana.com/developers/guides/getstarted/setup-local-development) installed on your machine, I have attached the proper resources of it . You can install the Solana CLI by running the following command:
+
+```sh
+sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+```
+
+After installation of both the above terminilogies , I suggest you to run Local validator to test and perfom onchain activities .
+
+```sh
+solana-test-validator
+```
+
+While building onchain , you need to choose between **Rust (without a framework) / Anchor Framework**. Anchor is a framework that makes it easier to build on Solana by providing a higher-level API for developers.

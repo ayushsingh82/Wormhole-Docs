@@ -1,0 +1,12 @@
+# Account Model
+
+All data is stored on Solana in the form of **accounts**. The way data is organized on Solana resembles a key-value store, where each entry in the database is called an "account".
+
+![Account](https://solana-developer-content.vercel.app/assets/docs/core/accounts/accounts.svg)
+
+## Key Points
+
+1. Accounts: These are the basic units of data storage on Solana. Each account acts like an entry in a key-value store, identified by a unique address (key).
+2. Size: It can store up to 10MB of data.
+3. Rent: Storing data in accounts requires a rent deposit in SOL . The rent is proportional to the data size and is refundable when the account is closed.
+4. Ownership: Each account is owned by a program, which can modify its data and balance. However, anyone can increase the balance.
